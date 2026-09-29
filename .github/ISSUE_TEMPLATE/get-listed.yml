@@ -1,0 +1,33 @@
+name: Get my app listed
+description: Suggest an Android app that works well on Googlebooks.
+title: "List: <app name>"
+labels: [listing]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        googlebook.tech is a small, hand-picked showcase of community-built apps for Googlebooks.
+        It's a personal project, not affiliated with Google. Not every app gets listed.
+  - type: input
+    id: name
+    attributes: { label: App name }
+    validations: { required: true }
+  - type: input
+    id: github
+    attributes: { label: GitHub repo, description: "owner/repo, with an APK in its latest release", placeholder: kuscher/discobar }
+  - type: input
+    id: play
+    attributes: { label: Google Play link, placeholder: "https://play.google.com/store/apps/details?id=…" }
+  - type: textarea
+    id: what
+    attributes: { label: What it does, description: One or two sentences. }
+    validations: { required: true }
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: It installs and runs on a Googlebook.
+          required: true
+        - label: I made it, or I have the developer's permission to suggest it.
+          required: true
